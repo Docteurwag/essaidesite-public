@@ -1,0 +1,94 @@
+/* Charte graphique Lumen Christi TV pour l'admin Django */
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e2e6ef 100%);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+#header {
+    background: #fff;
+    border-bottom: 2px solid #e0c341;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    padding: 24px 32px 24px 80px;
+    position: relative;
+}
+
+#header .admin-branding img {
+    height: 56px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+#header .admin-branding span {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 2px;
+    vertical-align: middle;
+}
+
+#header .admin-branding {
+    display: flex;
+    align-items: center;
+}
+
+.module caption {
+    background: #e0c341;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.button, input[type="submit"], input[type="button"] {
+    background: #e0c341;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+    background: #c7b02a;
+}
+
+.breadcrumbs {
+    background: #f9f6e7;
+    color: #2c3e50;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+}
+
+.module {
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(44,62,80,0.07);
+    margin-bottom: 24px;
+}
+
+.module h2, .module caption {
+    color: #2c3e50;
+}
+
+.module table {
+    background: #fff;
+}
+
+.module th {
+    background: #e0c341;
+    color: #fff;
+}
+
+.module td {
+    color: #2c3e50;
+}
+
+.footer {
+    background: #f9f6e7;
+    color: #2c3e50;
+    border-top: 2px solid #e0c341;
+    padding: 16px 0;
+    font-size: 1rem;
+    text-align: center;
+}

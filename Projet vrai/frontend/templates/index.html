@@ -1,0 +1,99 @@
+    <!-- Menus secondaires YouTube (juste en bas du live) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Catholique - Lumière & Foi</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <div class="logo" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <img src="/static/logo.png" alt="Lumen Christi TV" style="height:80px; width:auto; display:block; margin-bottom:8px;">
+        <span style="font-weight:700; color:#D4AF37; font-size:2rem; text-align:center;">Lumen Christi TV</span>
+      </div>
+        <!-- Menus principaux lumenchristitv.com -->
+        <nav class="main-menus" style="margin: 1em 0; text-align:center;">
+          <a href="https://lumenchristitv.com/" target="_blank">Accueil</a> |
+          <a href="https://lumenchristitv.com/formation" target="_blank">Formation</a> |
+          <a href="https://lumenchristitv.com/prieres" target="_blank">Prières</a> |
+          <a href="https://lumenchristitv.com/emissions" target="_blank">Emissions</a> |
+          <a href="https://lumenchristitv.com/programmes" target="_blank">Programmes</a> |
+          <a href="https://lumenchristitv.com/dioceses" target="_blank">Diocèses</a> |
+          <a href="https://lumenchristitv.com/a-propos" target="_blank">A propos</a>
+        </nav>
+    </header>
+
+
+
+    <!-- Menus secondaires YouTube (juste en bas du live) -->
+    <nav class="youtube-menus" style="margin: 2em 0; text-align:center;">
+      <a href="https://www.youtube.com/@lumenchristitvbenin/videos" target="_blank">Vidéos</a> |
+      <a href="https://www.youtube.com/@lumenchristitvbenin/live" target="_blank">En direct</a> |
+      <a href="https://www.youtube.com/@lumenchristitvbenin/podcasts" target="_blank">Podcasts</a> |
+      <a href="https://www.youtube.com/@lumenchristitvbenin/playlists" target="_blank">Playlists</a>
+    </nav>
+
+    <!-- Playlists YouTube -->
+    <section class="playlists-section" style="margin:2em 0;">
+      <h2>Playlists</h2>
+      <div id="youtube-playlists" class="grid"></div>
+    </section>
+
+    <!-- Dernières parutions -->
+    <section class="latest-videos-section" style="margin:2em 0;">
+      <h2>Dernières parutions</h2>
+      <div id="youtube-latest-videos" class="grid"></div>
+    </section>
+
+    <!-- LIVE YOUTUBE (tout en bas de la page) -->
+    <section class="youtube-live" style="margin: 2em 0; text-align:center;">
+      <h2>Live</h2>
+      <iframe
+        width="700" height="400"
+        src="https://www.youtube.com/embed/live_stream?channel=UCQw6QwOQp6r6Qw6QwOQp6r6Q" 
+        title="YouTube live stream"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+      <div style="margin-top:8px;">
+        <a href="https://www.youtube.com/@lumenchristitvbenin/live" target="_blank">Voir sur YouTube</a>
+      </div>
+      <nav class="youtube-menus" style="margin: 2em 0; text-align:center;">
+        <a href="https://www.youtube.com/@lumenchristitvbenin/videos" target="_blank">Vidéos</a> |
+        <a href="https://www.youtube.com/@lumenchristitvbenin/live" target="_blank">En direct</a> |
+        <a href="https://www.youtube.com/@lumenchristitvbenin/podcasts" target="_blank">Podcasts</a> |
+        <a href="https://www.youtube.com/@lumenchristitvbenin/playlists" target="_blank">Playlists</a>
+      </nav>
+    </section>
+    <footer>
+      <p>&copy; 2026 TV Catholique. Tous droits réservés.</p>
+    </footer>
+
+    <a href="#" class="don-btn-fixed">Faire un don</a>
+    <style>
+      .don-btn-fixed {
+        position: fixed;
+        right: 2.5vw;
+        bottom: 2.5vw;
+        background: #D4AF37;
+        color: #fff;
+        padding: 0.7em 2em;
+        border-radius: 24px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 2px 16px #0003;
+        font-size: 1.2rem;
+        z-index: 1000;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .don-btn-fixed:hover {
+        background: #bfa13a;
+        transform: scale(1.06);
+      }
+    </style>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}Lumen Christi TV Admin{% endblock %}
+
+{% block branding %}
+  <div class="admin-branding">
+    <img src="{% static 'logo.png' %}" alt="Logo Lumen Christi TV" style="height:48px;vertical-align:middle;margin-right:16px;">
+    <span style="font-size:2rem;color:#2c3e50;font-weight:bold;vertical-align:middle;">Lumen Christi TV</span>
+  </div>
+{% endblock %}
+
+{% block extrahead %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'admin_custom.css' %}">
+{% endblock %}

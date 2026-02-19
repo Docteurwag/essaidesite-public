@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Catholique - Lumière & Foi</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">LUMIÈRE & FOI TV</div>
+        <nav>
+            <a href="#">Direct</a>
+            <a href="#">Replay</a>
+            <a href="#">Faire un don</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="live-indicator">EN DIRECT</div>
+        <h1>Messe du Dimanche</h1>
+        <div class="video-container">
+            <video id="main-player" controls poster="poster.jpg">
+                <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+        </div>
+    </section>
+    <section class="content">
+        <h2>Dernières Émissions</h2>
+        <div id="video-grid" class="grid"></div>
+    </section>
+    <footer>
+        <p>&copy; 2026 TV Catholique. Tous droits réservés.</p>
+    </footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>
