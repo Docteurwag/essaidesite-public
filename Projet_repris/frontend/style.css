@@ -1,0 +1,8 @@
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; margin: 0; padding: 0; }
+.hero { background: #00695c; color: #fff; padding: 2rem 0; text-align: center; }
+.main-nav { display: flex; justify-content: center; gap: 2rem; background: #e0f2f1; padding: 1rem 0; }
+.main-nav a { color: #00695c; text-decoration: none; font-weight: bold; }
+.main-nav a:hover { text-decoration: underline; }
+.accueil { max-width: 800px; margin: 2rem auto; }
+.card { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 1rem; margin-bottom: 1rem; }
+h1, h2, h3 { font-family: 'Segoe UI', Arial, sans-serif; }

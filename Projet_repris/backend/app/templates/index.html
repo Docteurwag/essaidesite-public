@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div style="max-width:500px;margin:auto;position:relative;min-height:90vh;overflow:visible;">
+	<!-- Logo et nom -->
+	<div style="text-align:center;margin:20px 0;">
+		<img src="{% static 'img/logo_lumen_christi.png' %}" alt="Logo Lumen Christi TV" style="width:180px;height:auto;margin-bottom:10px;background:#fff;border-radius:12px;box-shadow:0 2px 8px #0001;">
+		<h1 style="color:#00695c;font-size:24px;">Lumen Christi TV</h1>
+	</div>
+	<!-- Menus principaux -->
+	<div style="display:flex;flex-wrap:nowrap;overflow-x:auto;justify-content:center;gap:10px;margin-bottom:20px;align-items:center;">
+		<a class="menu-btn" href="https://lumenchristitv.com/actualites" target="_blank">Actualités</a>
+		<a class="menu-btn" href="https://lumenchristitv.com/formation/" target="_blank">Formations</a>
+		<a class="menu-btn" href="https://lumenchristitv.com/prieres" target="_blank">Prières</a>
+		<a class="menu-btn" href="https://lumenchristitv.com/emissions" target="_blank">Emissions</a>
+		<a class="menu-btn" href="https://lumenchristitv.com/grille-des-programmes/" target="_blank">Programmes</a>
+		<div class="dropdown">
+			<button class="menu-btn dropdown-toggle" style="cursor:pointer;display:flex;align-items:center;gap:6px;">
+				<span>Diocèses</span>
+				<span class="arrow" style="transition:transform 0.2s;">▼</span>
+			</button>
+			<div class="dropdown-content">
+				<a href="https://lumenchristitv.com/tag/archidiocese-de-cotonou/" target="_blank">Archidiocèse de Cotonou</a>
+				<a href="https://lumenchristitv.com/tag/diocese-dabomey/" target="_blank">Diocèse d'Abomey</a>
+				<a href="https://lumenchristitv.com/tag/diocese-de-dassa-zoume/" target="_blank">Diocèse de Dassa-Zoumé</a>
+				<a href="https://lumenchristitv.com/tag/diocese-de-lokossa/" target="_blank">Diocèse de Lokossa</a>
+				<a href="https://lumenchristitv.com/tag/diocese-de-porto-novo/" target="_blank">Diocèse de Porto-Novo</a>
+				<a href="https://lumenchristitv.com/tag/archidiocese-de-parakou/" target="_blank">Archidiocèse de Parakou</a>
+				<a href="https://lumenchristitv.com/tag/diocese-de-djougou/" target="_blank">Diocèse de Djougou</a>
+				<a href="https://lumenchristitv.com/tag/diocese-de-kandi/" target="_blank">Diocèse de Kandi</a>
+				<a href="https://lumenchristitv.com/tag/diocese-de-natitingou/" target="_blank">Diocèse de Natitingou</a>
+				<a href="https://lumenchristitv.com/tag/diocese-de-ndali/" target="_blank">Diocèse de N'Dali</a>
+			</div>
+		</div>
+		<a class="menu-btn" href="https://lumenchristitv.com/a-propos" target="_blank">À propos</a>
+	</div>
+	<!-- Live Twitch intégré -->
+	<div style="text-align:center;margin:20px 0;">
+		<span style="font-size:20px;font-weight:bold;color:#d32f2f;">Live</span><br>
+		<iframe src="https://player.twitch.tv/?channel=lumenchristitv2024&parent=127.0.0.1" frameborder="0" allowfullscreen="true" scrolling="no" height="300" width="100%"></iframe>
+		<a style="color:#1976d2;text-decoration:underline;margin-top:8px;display:block;" href="https://www.twitch.tv/lumenchristitv2024" target="_blank">Regarder sur Twitch</a>
+	</div>
+	<!-- Menus vidéos -->
+	<div style="display:flex;flex-wrap:nowrap;overflow-x:auto;justify-content:center;gap:10px;margin-bottom:20px;">
+			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin" target="_blank">Vidéos</a>
+			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin/live" target="_blank">En direct</a>
+			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin" target="_blank">Podcasts</a>
+			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin/playlists" target="_blank">Playlists</a>
+			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin/community" target="_blank">Posts</a>
+	</div>
+	<!-- Bouton don sous les menus vidéos -->
+	<div style="display:flex;justify-content:center;margin-bottom:30px;">
+		<a style="background:#ff9800;border-radius:30px;padding:12px 32px;color:#fff;font-weight:bold;font-size:18px;box-shadow:0 2px 8px #0002;z-index:1000;transition:background 0.2s;" href="https://me.fedapay.com/lumenchristitv" target="_blank">Faire un don</a>
+	</div>
+</div>
+<style>
+.menu-btn { background: #e0f2f1; border-radius: 8px; padding: 12px; color: #00695c; font-weight: bold; text-decoration:none; }
+.menu-btn:hover, .dropdown:hover .menu-btn, .dropdown.open .menu-btn { background: #b2dfdb; }
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background: #fff;
+	min-width: 230px;
+	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.10);
+	z-index: 9999;
+	border-radius: 14px;
+	margin-top: 8px;
+	left: 0;
+	padding: 8px 0;
+	transition: opacity 0.18s cubic-bezier(.4,0,.2,1), transform 0.18s cubic-bezier(.4,0,.2,1);
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(10px) scale(0.98);
+}
+.dropdown.open .dropdown-content {
+	display: block !important;
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0) scale(1);
+}
+.dropdown-content a {
+	color: #00695c;
+	padding: 12px 22px;
+	text-decoration: none;
+	display: block;
+	font-weight: 500;
+	border-radius: 8px;
+	transition: background 0.15s;
+}
+.dropdown-content a:hover {
+	background: linear-gradient(90deg, #e0f2f1 60%, #b2dfdb 100%);
+	color: #004d40;
+}
+.dropdown.open .dropdown-content { display: block !important; }
+@media (hover: hover) and (pointer: fine) {
+	.dropdown:hover .dropdown-content { display: block; }
+}
+.dropdown.open .arrow { transform: rotate(180deg); }
+</style>
+<script>
+// Menu déroulant Diocèses : ouverture au clic (mobile) et au survol (desktop)
+document.addEventListener('DOMContentLoaded', function() {
+	var dropdown = document.querySelector('.dropdown');
+	var toggle = document.querySelector('.dropdown-toggle');
+	var arrow = document.querySelector('.dropdown-toggle .arrow');
+	if(dropdown && toggle) {
+		// Clic mobile/tablette
+		toggle.addEventListener('click', function(e) {
+			e.preventDefault();
+			dropdown.classList.toggle('open');
+			// Test visuel : change la couleur de la flèche si ouvert
+			if(dropdown.classList.contains('open')) {
+				arrow.style.color = '#d32f2f';
+			} else {
+				arrow.style.color = '';
+			}
+		});
+		// Fermer si clic ailleurs
+		document.addEventListener('click', function(e) {
+			if (!dropdown.contains(e.target)) {
+				dropdown.classList.remove('open');
+				if(arrow) arrow.style.color = '';
+			}
+		});
+		// Fermer si touche Echap
+		document.addEventListener('keydown', function(e) {
+			if(e.key === 'Escape') {
+				dropdown.classList.remove('open');
+				if(arrow) arrow.style.color = '';
+			}
+		});
+	}
+});
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+default_platform(:android)
+
+platform :android do
+  desc "Publie l’APK/AAB sur le Play Store"
+  lane :deploy do
+    gradle(task: "assembleRelease")
+    upload_to_play_store(
+      track: 'production',
+      aab: Dir["app/build/outputs/bundle/release/*.aab"].first,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+end
