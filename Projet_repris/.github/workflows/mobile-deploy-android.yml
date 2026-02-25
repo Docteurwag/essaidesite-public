@@ -1,0 +1,35 @@
+name: Deploy Android to Play Store
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: Install dependencies
+        run: yarn install
+      - name: Install JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Install Fastlane
+        run: sudo gem install fastlane -NV
+      - name: Set up Google Play credentials
+        env:
+          SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_STORE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          mkdir -p mobile/android/fastlane
+          echo "$SERVICE_ACCOUNT_JSON" > mobile/android/fastlane/play-store-service-account.json
+      - name: Deploy to Play Store
+        run: |
+          cd mobile/android
+          fastlane deploy

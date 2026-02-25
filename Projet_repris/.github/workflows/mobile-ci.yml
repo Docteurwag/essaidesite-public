@@ -1,0 +1,69 @@
+name: Build React Native Mobile App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: Install dependencies
+        run: yarn install
+      - name: Install JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Build Android APK
+        run: |
+          cd mobile
+          yarn install
+          cd android
+          ./gradlew assembleRelease
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release.apk
+          path: mobile/android/app/build/outputs/apk/release/app-release.apk
+
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: Install dependencies
+        run: yarn install
+      - name: Set up Ruby for CocoaPods
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+      - name: Install CocoaPods
+        run: sudo gem install cocoapods
+      - name: Install pods
+        run: |
+          cd mobile/ios
+          pod install
+      - name: Build iOS app (archive)
+        run: |
+          cd mobile/ios
+          xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -configuration Release -sdk iphoneos -archivePath ${{ github.workspace }}/build/YourApp.xcarchive archive
+      - name: Upload iOS archive artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-archive
+          path: build/YourApp.xcarchive
