@@ -35,3 +35,4 @@ jobs:
           cd mobile/android
           fastlane deploy
           # Ajout workflow - trigger detection
+          # Forçage rechargement workflow GitHub Actions
