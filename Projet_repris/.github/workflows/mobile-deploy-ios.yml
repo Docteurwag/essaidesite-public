@@ -35,3 +35,4 @@ jobs:
         run: |
           cd mobile/ios
           fastlane deploy
+          # Forçage rechargement workflow GitHub Actions iOS
