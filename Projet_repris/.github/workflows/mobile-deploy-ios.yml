@@ -1,7 +1,11 @@
 
 name: Deploy iOS to App Store
 
+
 on:
+  push:
+    branches:
+      - principal
   workflow_dispatch:
 
 jobs:
