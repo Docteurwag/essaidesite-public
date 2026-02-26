@@ -1,4 +1,5 @@
-name: Deploy iOS to TestFlight
+
+name: Deploy iOS to App Store
 
 on:
   workflow_dispatch:
@@ -30,7 +31,7 @@ jobs:
         run: |
           mkdir -p mobile/ios/fastlane
           echo "$APP_STORE_CONNECT_API_KEY" > mobile/ios/fastlane/AuthKey.p8
-      - name: Deploy to TestFlight
+      - name: Deploy to App Store
         run: |
           cd mobile/ios
           fastlane deploy

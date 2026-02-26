@@ -42,12 +42,11 @@ export default function App() {
           ))}
         </View>
         {/* Live Twitch */}
-        <View style={styles.liveSection}>
-          <Text style={styles.liveTitle}>Live</Text>
-          <TouchableOpacity onPress={() => Linking.openURL(TWITCH_URL)}>
-            <Text style={styles.liveLink}>Regarder le live sur Twitch</Text>
-          </TouchableOpacity>
-        </View>
+            <WebView
+              source={{ uri: 'https://www.twitch.tv/lumenchristitv2024' }}
+              style={styles.webview}
+              allowsFullscreenVideo
+            />
         {/* Menus vidéos */}
         <View style={styles.menuSection}>
           {videoMenus.map((item, idx) => (
@@ -66,16 +65,104 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f9f9f9' },
-  header: { alignItems: 'center', marginVertical: 20 },
-  logo: { width: 80, height: 80, borderRadius: 40, marginBottom: 10 },
-  title: { fontSize: 24, fontWeight: 'bold', color: '#00695c' },
-  menuSection: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginVertical: 10 },
-  menuBtn: { backgroundColor: '#e0f2f1', borderRadius: 8, padding: 12, margin: 6 },
-  menuText: { color: '#00695c', fontWeight: 'bold' },
-  liveSection: { alignItems: 'center', marginVertical: 20 },
-  liveTitle: { fontSize: 20, fontWeight: 'bold', color: '#d32f2f' },
-  liveLink: { color: '#1976d2', textDecorationLine: 'underline', marginTop: 8 },
-  donBtn: { position: 'absolute', bottom: 20, right: 20, backgroundColor: '#ff9800', borderRadius: 30, paddingVertical: 12, paddingHorizontal: 24, elevation: 4 },
-  donText: { color: '#fff', fontWeight: 'bold', fontSize: 16 },
+  container: {
+    flex: 1,
+    backgroundColor: '#e0f2f1',
+  },
+  header: {
+    alignItems: 'center',
+    marginVertical: 28,
+    backgroundColor: '#fff',
+    borderRadius: 32,
+    marginHorizontal: 16,
+    paddingVertical: 18,
+    shadowColor: '#00695c',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.12,
+    shadowRadius: 12,
+    elevation: 6,
+  },
+  logo: {
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    marginBottom: 10,
+    borderWidth: 2,
+    borderColor: '#00bfae',
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#00695c',
+    letterSpacing: 1,
+  },
+  menuSection: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginVertical: 16,
+    marginHorizontal: 8,
+  },
+  menuBtn: {
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    paddingVertical: 14,
+    paddingHorizontal: 22,
+    margin: 8,
+    shadowColor: '#00bfae',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.13,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  menuText: {
+    color: '#00695c',
+    fontWeight: 'bold',
+    fontSize: 16,
+    letterSpacing: 0.5,
+  },
+  liveSection: {
+    alignItems: 'center',
+    marginVertical: 24,
+  },
+  liveTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#d32f2f',
+    marginBottom: 8,
+  },
+  liveLink: {
+    color: '#1976d2',
+    textDecorationLine: 'underline',
+    marginTop: 8,
+    fontSize: 15,
+  },
+  donBtn: {
+    position: 'absolute',
+    bottom: 28,
+    right: 28,
+    backgroundColor: '#ff9800',
+    borderRadius: 30,
+    paddingVertical: 14,
+    paddingHorizontal: 28,
+    elevation: 8,
+    shadowColor: '#ff9800',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.18,
+    shadowRadius: 12,
+  },
+  donText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 18,
+    letterSpacing: 0.5,
+  },
+  webview: {
+    flex: 1,
+    borderRadius: 18,
+    marginHorizontal: 8,
+    overflow: 'hidden',
+    minHeight: 260,
+    backgroundColor: '#000',
+  },
 });

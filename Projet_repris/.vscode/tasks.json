@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Installer Yarn et dépendances mobile",
+			"type": "shell",
+			"command": "npm install -g yarn && cd mobile && yarn install",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

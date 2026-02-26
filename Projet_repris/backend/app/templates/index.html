@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div style="max-width:500px;margin:auto;position:relative;min-height:90vh;overflow:visible;">
+<div class="accueil">
 	<!-- Logo et nom -->
-	<div style="text-align:center;margin:20px 0;">
-		<img src="{% static 'img/logo_lumen_christi.png' %}" alt="Logo Lumen Christi TV" style="width:180px;height:auto;margin-bottom:10px;background:#fff;border-radius:12px;box-shadow:0 2px 8px #0001;">
-		<h1 style="color:#00695c;font-size:24px;">Lumen Christi TV</h1>
+	<div class="hero">
+		<img src="{% static 'img/logo_lumen_christi.png' %}" alt="Logo Lumen Christi TV" style="width:120px;height:auto;margin-bottom:10px;background:#fff;border-radius:32px;box-shadow:0 2px 8px #00bfae22;">
+		<h1>Lumen Christi TV</h1>
 	</div>
 	<!-- Menus principaux -->
-	<div style="display:flex;flex-wrap:nowrap;overflow-x:auto;justify-content:center;gap:10px;margin-bottom:20px;align-items:center;">
+	<nav class="main-nav" style="margin-bottom:2rem;">
 		<a class="menu-btn" href="https://lumenchristitv.com/actualites" target="_blank">Actualités</a>
 		<a class="menu-btn" href="https://lumenchristitv.com/formation/" target="_blank">Formations</a>
 		<a class="menu-btn" href="https://lumenchristitv.com/prieres" target="_blank">Prières</a>
@@ -33,25 +33,22 @@
 			</div>
 		</div>
 		<a class="menu-btn" href="https://lumenchristitv.com/a-propos" target="_blank">À propos</a>
-	</div>
+	</nav>
 	<!-- Live Twitch intégré -->
-	<div style="text-align:center;margin:20px 0;">
-		<span style="font-size:20px;font-weight:bold;color:#d32f2f;">Live</span><br>
-		<iframe src="https://player.twitch.tv/?channel=lumenchristitv2024&parent=127.0.0.1" frameborder="0" allowfullscreen="true" scrolling="no" height="300" width="100%"></iframe>
+	<div style="display:flex;flex-direction:column;align-items:center;margin-bottom:2em;">
+		<h2 style="color:#d32f2f;">Live</h2>
+		<iframe src="https://player.twitch.tv/?channel=lumenchristitv2024&parent=127.0.0.1&parent=localhost&parent=lumenchristitv.com" frameborder="0" allowfullscreen="true" scrolling="no" height="300" width="100%"></iframe>
 		<a style="color:#1976d2;text-decoration:underline;margin-top:8px;display:block;" href="https://www.twitch.tv/lumenchristitv2024" target="_blank">Regarder sur Twitch</a>
 	</div>
 	<!-- Menus vidéos -->
-	<div style="display:flex;flex-wrap:nowrap;overflow-x:auto;justify-content:center;gap:10px;margin-bottom:20px;">
-			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin" target="_blank">Vidéos</a>
-			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin/live" target="_blank">En direct</a>
-			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin" target="_blank">Podcasts</a>
-			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin/playlists" target="_blank">Playlists</a>
-			<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin/community" target="_blank">Posts</a>
+	<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:2rem;">
+		<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin" target="_blank">Vidéos</a>
+		<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin/live" target="_blank">En direct</a>
+		<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin" target="_blank">Podcasts</a>
+		<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin/playlists" target="_blank">Playlists</a>
+		<a class="menu-btn" href="https://www.youtube.com/@lumenchristitvbenin/community" target="_blank">Posts</a>
 	</div>
-	<!-- Bouton don sous les menus vidéos -->
-	<div style="display:flex;justify-content:center;margin-bottom:30px;">
-		<a style="background:#ff9800;border-radius:30px;padding:12px 32px;color:#fff;font-weight:bold;font-size:18px;box-shadow:0 2px 8px #0002;z-index:1000;transition:background 0.2s;" href="https://me.fedapay.com/lumenchristitv" target="_blank">Faire un don</a>
-	</div>
+
 </div>
 <style>
 .menu-btn { background: #e0f2f1; border-radius: 8px; padding: 12px; color: #00695c; font-weight: bold; text-decoration:none; }

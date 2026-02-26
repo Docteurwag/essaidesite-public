@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="direct">
-    <h2>En direct</h2>
-    <div class="player">
-        <!-- Intégration du player vidéo (exemple YouTube) -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=UCXXXXXXX" frameborder="0" allowfullscreen></iframe>
+<section class="accueil" style="max-width:600px;margin:2rem auto;">
+    <div class="card" style="text-align:center;">
+        <h2>En direct</h2>
+        <iframe src="https://player.twitch.tv/?channel=lumenchristitv2024&parent=127.0.0.1&parent=localhost&parent=lumenchristitv.com" frameborder="0" allowfullscreen="true" scrolling="no" height="300" width="100%"></iframe>
+        <a style="color:#1976d2;text-decoration:underline;margin-top:8px;display:block;" href="https://www.twitch.tv/lumenchristitv2024" target="_blank">Regarder sur Twitch</a>
     </div>
 </section>
 {% endblock %}

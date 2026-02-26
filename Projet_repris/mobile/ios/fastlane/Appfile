@@ -1,3 +1,3 @@
 apple_id("ton@email.com") # Ton identifiant Apple
 team_id("TON_TEAM_ID") # ID de ton équipe Apple Developer
-app_identifier("com.lumenchristitv.app") # Identifiant du bundle
+app_identifier("com.lumenchristitv.mobile") # Identifiant du bundle (à personnaliser)

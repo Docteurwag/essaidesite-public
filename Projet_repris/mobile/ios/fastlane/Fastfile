@@ -1,14 +1,14 @@
 default_platform(:ios)
 
+
 platform :ios do
-  desc "Publie l’app sur l’App Store TestFlight"
+  desc "Déployer sur l'App Store"
   lane :deploy do
+    match(type: "appstore")
     build_app(
       scheme: "Lumen_Christi_TV",
       export_method: "app-store"
     )
-    upload_to_testflight(
-      skip_waiting_for_build_processing: true
-    )
+    upload_to_app_store
   end
 end
