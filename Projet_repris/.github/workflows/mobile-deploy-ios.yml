@@ -36,3 +36,4 @@ jobs:
           cd mobile/ios
           fastlane deploy
           # Forçage rechargement workflow GitHub Actions iOS
+          # Trigger rescan GitHub Actions 2026-02-26
